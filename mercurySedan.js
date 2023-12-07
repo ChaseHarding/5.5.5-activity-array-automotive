@@ -12,18 +12,38 @@
 
 
 //TO DO: Code the Car subclass here or in index.js file, i.e. class Car extends Vehicle ...
-
-class Car extends Vehichle {
-    constructor (maxPassengers, passengers, numberOfWheels, maxSpeed, fuel, scheduleService) {
+import Vehicle from './vehicleBaseClass.js'
+class Car extends Vehicle {
+    constructor (make, model, year, color, mileage) {
         super(make, model, year, color, mileage)
-        this.maxPassengers = maxPassengers
-        this.passengers = passengers
-        this.numberOfWheels = numberOfWheels
-        this.maxSpeed = maxSpeed
-        this.fuel = fuel
-        this.scheduleService = scheduleService 
+        this.maxPassengers = 5;
+        this.passengers = 0;
+        this.numberOfWheels = 4
+        this.maxSpeed = 160
+        this.fuel = 10
+        this.scheduleService = false
+        this.isStarted = this.start();
+    }
+    loadPassenger(num) {
+        this.passengers = num;
+        return this.passengers < this.maxPassengers ? true : false;
+
+        }
+    
+    start() {
+        return this.fuel > 0 ? true : false;
+    }
+    scheduleService(mileage) {
+        this.mileage = mileage
+        return this.mileage > 30000 ? true : false
     }
 }
+
+const myCar = new Car("4", "2", "4", "120", "10", "");
+console.log(myCar.isStarted);
+console.log(myCar.scheduleService);
+const banana = myCar.loadPassenger(2);
+console.log(banana);
 
 
 

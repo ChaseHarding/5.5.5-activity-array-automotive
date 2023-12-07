@@ -1,4 +1,7 @@
-class Vehicle {
+
+
+
+export default class Vehicle {
     constructor(make, model, year, color, mileage) {
         this.make = make;
         this.model = model;
@@ -85,7 +88,8 @@ class Vehicle {
     }
 }
 
+
 //This exports things you want to use from this "module", more info in readme
-module.exports = {
-    Vehicle
-}
+// module.exports = {
+//     Vehicle
+// }
